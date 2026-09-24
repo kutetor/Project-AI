@@ -4,6 +4,10 @@ const taskList = document.getElementById("taskList");
 
 addTaskButton.addEventListener("click", addTask);
 
+// Tryck Enter för att lägga till aktivitet 
+taskInput.addEventListener("keydown", function (event)
+{ if (event.key === "Enter") { addTask(); } });
+
 function addTask() {
     const taskText = taskInput.value.trim();
 

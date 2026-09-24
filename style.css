@@ -1,6 +1,12 @@
 * {
     box-sizing: border-box;
+    text-align: center;
 }
+
+img{
+    width: 250px;
+    height: auto;
+    }
 
 body {
     margin: 0;
@@ -14,17 +20,19 @@ body {
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
-    background-color: white;
+    background-color: lightblue;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 5px;
 }
 
 p {
-    color: #666;
+    font-family: c;
+    color: blue;
 }
 
 .task-input {
