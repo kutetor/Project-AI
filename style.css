@@ -1,83 +1,113 @@
+/* Gäller för alla element */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Räknar padding och border i elementets storlek */    
     text-align: center;
 }
 
 img{
     width: 250px;
-    height: auto;
+    height: auto;   /* Anpassar höjden automatiskt så att bilden inte blir utdragen eller ihoptryckt */
     }
 
 body {
-    margin: 0;
+    margin: 0;  /* Tar bort webbläsarens standardmarginal runt hela sidan */
     font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: lightskyblue;
+    
 }
 
 .planner {
-    width: 90%;
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 30px;
+    width: 90%; /* Gör planeringsrutan 90 procent så bred som skärmen */
+    max-width: 600px;   /* Hindrar rutan från att bli bredare än 600 pixlar */
+    margin: 60px auto;  /* Ger 60 pixlars avstånd ovanför och under; auto centrerar rutan vågrätt */
+    padding: 30px;  /* Skapar 30 pixlars utrymme mellan innehållet och rutans kant */
     background-color: lightblue;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;    /* Rundar rutans hörn */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);  /* Lägger till en mörk, genomskinlig skugga under och runt rutan */
 }
 
 h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-bottom: 5px;
+    font-family: Georgia;
+    color: cornflowerblue;
+    margin-bottom: 5px; /* Lägger till ett litet avstånd under rubriken */
 }
 
 p {
-    font-family: c;
+    font-family: Times New Roman;
     color: blue;
 }
 
 .task-input {
-    display: flex;
-    gap: 10px;
-    margin-top: 25px;
+    display: flex;  /* Placerar inputfältet och knappen i en flexibel rad */
+    gap: 10px;  /* Skapar 10 pixlars mellanrum mellan inputfältet och knappen */
+    margin-top: 25px;   /* Skapar 25 pixlars avstånd ovanför inputfältet */
 }
 
 #taskInput {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    flex: 1;    /* Gör att inputfältet använder allt ledigt utrymme på raden */
+    padding: 12px;  /* Skapar utrymme mellan texten och inputfältets kant */
+    border: 1px solid cornflowerblue;
+    border-radius: 8px; /* Rundar inputfältets hörn */
+    outline: none;  /* Tar bort den synliga konturen när inputfältet är markerad */
+    caret-color: transparent; /* Tar bort det blinkande skrivstrecket */
 }
 
+
 #addTaskButton {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 12px 18px; /* Ger knappen 12 pixlars utrymme upptill/nedtill och 18 pixlar på sidorna */
+    border: none;   /* Tar bort knappens vanliga kant */
+    border-radius: 8px; /* Rundar knappens hörn */
+    cursor: pointer;    /* Visar en hand när muspekaren placeras över knappen */
 }
 
 #taskList {
-    list-style: none;
-    padding: 0;
+    list-style: none;  /* Tar bort de vanliga punkterna framför listans uppgifter */
+    padding: 0; /* Tar bort listans standardutrymme på insidan */
     margin-top: 25px;
 }
 
-.task {
+.task { 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Placerar uppgiftstexten och raderingsknappen på varsin sida */
     align-items: center;
-    padding: 12px;
-    margin-bottom: 10px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
+    padding: 12px;  /* Skapar utrymme mellan innehållet och uppgiftens kant */
+    margin-bottom: 10px;    /* Skapar 10 pixlars avstånd mellan uppgifterna */
+    background-color: azure;    /* Ger varje uppgift en backgrundsfärg */
+    border-radius: 8px; /* Rundar hörnen på varje uppgift */
 }
 
 .completed {
-    text-decoration: line-through;
-    opacity: 0.6;
+    text-decoration: line-through;  /*Genom att klicka på uppgiften kan man lägga ett streck över den när den är klar*/
+    opacity: 0.8;   /* Gör den klara uppgiften ljusare och mindre framträdande */
 }
 
 .delete-button {
-    border: none;
+    border: none;   /* Tar bort knappens kant */
     background: none;
     cursor: pointer;
 }
+
+/* Anpassar sidan för små skärmar */
+@media (max-width: 600px) {      
+
+    .planner {
+        width: 95%;
+        padding: 20px;  /* Minskar utrymmet inuti rutan så att mer plats finns på mobilen */
+        margin: 20px auto;/* Minskar avståndet runt rutan på små skärmar */
+    }
+
+    .task-input {
+        flex-direction: column; /* Placerar inputfältet och knappen under varandra i stället för bredvid varandra */
+    }
+
+    #taskInput,
+    #addTaskButton {
+        width: 100%;    /* Gör både inputfältet och knappen lika breda som sin behållare */
+    }
+
+    img {
+        max-width: 100%;    /* Hindrar bilden från att bli bredare än skärmen */
+        height: auto; /* Anpassar höjden automatiskt så att bildens proportioner behålls */ 
+    }
+}
+
